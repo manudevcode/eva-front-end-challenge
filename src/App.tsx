@@ -56,7 +56,7 @@ export default class App extends React.Component<{} ,{ loading: boolean, cryptos
 
     return (
       <div className="App">
-        <div>
+        <div>          
           <label>Filter By</label>
           <select>
             <option>Name</option>
@@ -64,6 +64,10 @@ export default class App extends React.Component<{} ,{ loading: boolean, cryptos
             <option>Market Cap</option>
             <option>Circulating supply</option>
           </select>
+          <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+            Button
+          </button>
+
         </div>
         <table>
           <tr>
