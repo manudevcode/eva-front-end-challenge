@@ -1,8 +1,8 @@
 import React from "react";
 import "./App.css";
 
-export default class App extends React.Component {
-  constructor(props) {
+export default class App extends React.Component<{} ,{ loading: boolean, cryptos: any}> {
+  constructor(props: any) {
     super(props);
 
     this.state = {
@@ -42,9 +42,9 @@ export default class App extends React.Component {
       return <div>loading...</div>;
     }
 
-    let formattedData = [];
+    let formattedData: any = [];
 
-    Object.keys(this.state.cryptos).map((crypto) => {
+    Object.keys(this.state.cryptos).map((crypto: any) => {
       formattedData.push({
         key: crypto,
         price: this.state.cryptos[crypto]["USD"]["PRICE"],
@@ -74,7 +74,7 @@ export default class App extends React.Component {
           </tr>
 
           <tbody>
-            {formattedData.map((data) => {
+            {formattedData.map((data: any) => {
               return (
                 <tr>
                   <td>Name: {data.name}</td>
