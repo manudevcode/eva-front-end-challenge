@@ -20,7 +20,7 @@ export const CryptosListItem: FunctionComponent<CryptosListItemProps> = ({ crypt
       <td className="lg:px-6 px-2 py-1 whitespace-nowrap">
         <span className="flex items-center">
           <span className="flex-shrink-0 h-10 w-10">
-            <img className="h-10 w-10 rounded-full" src={crypto.image} alt={`Image of ${crypto.name}`} />
+            <img className="h-10 w-10 rounded-full" src={crypto.image} alt={`icon of ${crypto.name}`} />
           </span>
           <span className="ml-4">
             <span className="text-sm font-medium text-gray-900">{ crypto.name }</span>
@@ -47,7 +47,7 @@ export const CryptosListItem: FunctionComponent<CryptosListItemProps> = ({ crypt
         </span>
       </td>
       <td className="lg:px-6 px-2 py-1 whitespace-nowrap text-right text-sm font-medium">
-        <a href="#" className="text-indigo-600 hover:text-indigo-900">
+        <a href="#!" className="text-indigo-600 hover:text-indigo-900">
           <EyeIcon className="block h-4 w-4 text-gray-800"/>
         </a>
       </td>
