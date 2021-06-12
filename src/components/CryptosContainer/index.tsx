@@ -30,23 +30,22 @@ export const CryptosContainer: FunctionComponent = () => {
   useEffect(() => {
     (async function (){ 
       // Call cryptos API
-      let { data } = await GetCryptos();
+      let { data: responseData } = await GetCryptos();
+      let data = responseData.Data;
       let cryptosList: Crypto[] = [];
 
-      for (const cryptoKey in data.RAW) {
-        if (Object.prototype.hasOwnProperty.call(data.RAW, cryptoKey)) {
+      for (const cryptoKey of data) {
           cryptosList.push({
-            key: cryptoKey,            
-            image: `https://www.cryptocompare.com${data.RAW[cryptoKey]["USD"]["IMAGEURL"]}`,
-            price: data.RAW[cryptoKey]["USD"]["PRICE"],
-            marketCap: data.RAW[cryptoKey]["USD"].MKTCAP,
-            circulatingSupply: data.RAW[cryptoKey]["USD"].SUPPLY,
-            name: data.RAW[cryptoKey]["USD"]["FROMSYMBOL"],
-            lowDay: data.RAW[cryptoKey]["USD"]["LOWDAY"],
-            highday: data.RAW[cryptoKey]["USD"]["HIGHDAY"],
-            openDay: data.RAW[cryptoKey]["USD"]["OPENDAY"],
+            key: cryptoKey.RAW["USD"].FROMSYMBOL,            
+            image: `https://www.cryptocompare.com${cryptoKey.RAW["USD"]["IMAGEURL"]}`,
+            price: cryptoKey.RAW["USD"]["PRICE"],
+            marketCap: cryptoKey.RAW["USD"].MKTCAP,
+            circulatingSupply: cryptoKey.RAW["USD"].SUPPLY,
+            name: cryptoKey.RAW["USD"]["FROMSYMBOL"],
+            lowDay: cryptoKey.RAW["USD"]["LOWDAY"],
+            highday: cryptoKey.RAW["USD"]["HIGHDAY"],
+            openDay: cryptoKey.RAW["USD"]["OPENDAY"],
           });
-        }
       }
 
       dispatchCryptos({
