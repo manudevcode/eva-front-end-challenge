@@ -1,5 +1,6 @@
 # Senior Frontend Developer Challenge
 
+[See proyect running](https://eva-front-end-challenge.vercel.app/)
 ## Project summary
 
 The main requirement requests:
@@ -58,6 +59,10 @@ I could add a detail page for each crypto currency so I could integrate react ro
 
 ### Deployment
 I must admit that I have never deployed a react application in Vercel so I usually use AWS, but after seeing how easy it is I think I have an extra option for future projects since what it offers is very good.
+
+### Note
+
+Although the architecture implemented in this project is simple and is not known as: `Atomic Design`, etc. is an architecture that works well and is scalable, I can easily adapt to very different ways of working.
 
 Thanks!
 
