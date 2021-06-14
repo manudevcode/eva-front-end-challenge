@@ -53,7 +53,7 @@ describe('<CryptosListItem />', () => {
 
   it('show crptyo price', () => {
     let tdElements = component.container.querySelector('td:nth-child(2)');
-    expect(tdElements?.textContent).toEqual('$ 10');
+    expect(tdElements?.textContent).toEqual('$10USD');
   }) 
 
   it('show crptyo marketCap', () => {
