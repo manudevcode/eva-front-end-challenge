@@ -5,7 +5,7 @@ import {
   useState,
 } from "react";
 import {  ArrowRightIcon, ArrowDownIcon } from '@heroicons/react/solid';
-import { GetCryptos } from "../../services";
+import { GetCryptos } from "../../services/api";
 import CryptosList from "./CryptosList";
 import ListLoader from "../ListLoader";
 import Filters from "./Filters";
