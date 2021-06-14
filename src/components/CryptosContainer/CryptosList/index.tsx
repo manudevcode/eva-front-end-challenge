@@ -19,38 +19,40 @@ export const CryptosList: FunctionComponent<CryptosListProps> = ({ cryptos, sear
     <div className="text-xl text-gray-800">No Cryptos finded</div>
     <div className="text-lg text-gray-800">Please try again in a moment.</div>
   </div> :(
-    <table className="min-w-full divide-y divide-gray-200 relative table-fixed">
-      <thead className="bg-gray-50 ">
-        <tr>    
-          <th scope="col" className="lg:px-6 px-2 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-            Name
-          </th>
-          <th scope="col" className="lg:px-6 px-2 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-            Price
-          </th>
-          <th scope="col" className="lg:px-6 px-2 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-            Market Cap
-          </th>
-          <th scope="col" className="lg:px-6 px-2 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-            Circulating supply
-          </th>
-          <th scope="col" className="lg:px-6 px-2 py-3">
-            <span className="sr-only">Show more</span>
-          </th>
-        </tr>
-      </thead>
-      <tbody className="bg-white divide-y divide-gray-200">
-        { 
-          cryptos
-            .filter(
-              (crypto: Crypto) => search.length > 0 
-                ? crypto.name.toLowerCase().indexOf(search) !== -1
-                : crypto
-            )
-            .map( (crypto: Crypto) => <CryptosListItem key={crypto.key} crypto={crypto}/>)
-        }
-      </tbody>
-    </table>
+    <div className="flex flex-col h-screen">
+      <div className="flex-grow overflow-auto">
+
+        <table className="min-w-full divide-y divide-gray-200 relative table-fixed">
+          <thead className="bg-gray-50">
+            <tr>    
+              <th scope="col" className="lg:px-6 px-2 py-3 sticky top-0 bg-gray-200 text-left text-xs font-medium text-gray-500 uppercase">
+                Name
+              </th>
+              <th scope="col" className="lg:px-6 px-2 py-3 sticky top-0 bg-gray-200 text-left text-xs font-medium text-gray-500 uppercase">
+                Price
+              </th>
+              <th scope="col" className="lg:px-6 px-2 py-3 sticky top-0 bg-gray-200 text-left text-xs font-medium text-gray-500 uppercase">
+                Market Cap
+              </th>
+              <th scope="col" className="lg:px-6 px-2 py-3 sticky top-0 bg-gray-200 text-left text-xs font-medium text-gray-500 uppercase">
+                Circulating supply
+              </th>              
+            </tr>
+          </thead>
+          <tbody className="bg-white divide-y divide-gray-200">
+            { 
+              cryptos
+                .filter(
+                  (crypto: Crypto) => search.length > 0 
+                    ? crypto.name.toLowerCase().indexOf(search) !== -1
+                    : crypto
+                )
+                .map( (crypto: Crypto) => <CryptosListItem key={crypto.key} crypto={crypto}/>)
+            }
+          </tbody>
+        </table>
+      </div>
+    </div>
   )
 }
 
