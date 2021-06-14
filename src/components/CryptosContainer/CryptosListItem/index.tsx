@@ -28,9 +28,11 @@ export const CryptosListItem: FunctionComponent<CryptosListItemProps> = ({ crypt
       </td>
       <td className="lg:px-6 px-2 py-1 whitespace-nowrap">
         <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-        $ <span className="text-sm text-gray-900">
-          <FormatNumber number={ crypto.price } />
-        </span>
+          $ 
+          <span className="text-sm text-gray-900">
+            <FormatNumber number={ crypto.price } />
+          </span>
+          USD
         </span>
       </td>
       <td className="lg:px-6 px-2 py-1 whitespace-nowrap">
