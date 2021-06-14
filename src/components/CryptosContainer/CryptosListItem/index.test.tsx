@@ -43,7 +43,7 @@ describe('<CryptosListItem />', () => {
 
   it('render correclty crpyto fields', () => {
     let tdElements = component.container.getElementsByTagName('td');
-    expect(tdElements).toHaveLength(5)
+    expect(tdElements).toHaveLength(4)
   }) 
   
   it('show crptyo name', () => {

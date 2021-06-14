@@ -1,6 +1,5 @@
 import { FunctionComponent } from 'react'
 import { Crypto } from '../../../types/cryptoTypes';
-import { EyeIcon } from '@heroicons/react/solid'
 import FormatNumber from '../../FormatNumber';
 
 interface CryptosListItemProps {
@@ -45,11 +44,6 @@ export const CryptosListItem: FunctionComponent<CryptosListItemProps> = ({ crypt
           <FormatNumber number={ crypto.circulatingSupply } />
         </span>
         </span>
-      </td>
-      <td className="lg:px-6 px-2 py-1 whitespace-nowrap text-right text-sm font-medium">
-        <a href="#!" className="text-indigo-600 hover:text-indigo-900">
-          <EyeIcon className="block h-4 w-4 text-gray-800"/>
-        </a>
       </td>
     </tr>
   )
